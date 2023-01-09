@@ -40,7 +40,7 @@ var questionIndex = 0;
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
 var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrapper");
+var wrapper = document.querySelector("#main-container");
 
 // Seconds left is 15 seconds per question:
 var secondsLeft = 76;
@@ -74,9 +74,9 @@ function render(questionIndex) {
     // Clears existing data 
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
+    // to loop through all info in array
     for (var i = 0; i < questions.length; i++) {
-        // Appends question title only
+        // updates question title only
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
@@ -102,11 +102,11 @@ function compare(event) {
         if (element.textContent == questions[questionIndex].answer) {
             score++;
             createDiv.textContent = "Correct!"
-            // Correct condition 
+            // incorrect condition 
         } else {
             // Will deduct -5 seconds off secondsLeft for wrong answers
             secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+            createDiv.textContent = "Wrong!"
         }
 
     }
@@ -166,7 +166,7 @@ function allDone() {
 
     questionsDiv.appendChild(createInput);
 
-    // submit
+    // submit tab
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
