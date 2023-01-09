@@ -29,6 +29,8 @@
         #currentTime {
             float: right;
         }
+/* ----------------- */
+/* This is the button to return to the main menu */
 
         #goBack {
             background-color: rgb(92, 12, 92);
@@ -41,10 +43,12 @@
             width: auto;
             text-align: center;
             text-decoration: none;
+            border-radius: 1cm;
         }
 
 
-
+/* ----------------- */
+/* This is the clear high scores */
         #clear {
             background-color: rgb(92, 12, 92);
             position: relative;
@@ -54,6 +58,7 @@
             top: 30%;
             right: 5%;
             text-align: center;
+            border-radius: 1cm;
         }
 
         button {
@@ -144,6 +149,4 @@
       a {
           margin-left: 10%;
       }
-
-     
 }
